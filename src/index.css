@@ -1,0 +1,227 @@
+﻿
+:root {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #252039;
+  background: #f8dce9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #252039;
+  --pink: #f9a8cd;
+  --paper: #fffdf8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 80px 24px;
+  background:
+    radial-gradient(circle, #79496930 1px, transparent 1.5px) 0 0 / 8px 8px,
+    linear-gradient(135deg, #fbd4e5, #e4dcff);
+}
+
+/* Manga speed lines behind the reading panel. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from 12deg at 50% 45%,
+    transparent 0deg 12deg,
+    #60467412 12deg 12.5deg,
+    transparent 12.5deg 20deg
+  );
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+#root > div {
+  position: relative;
+  padding: 54px 36px 36px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 3px;
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+#root > div::before {
+  content: "DAILY QUEST";
+  position: absolute;
+  top: -23px;
+  left: 24px;
+  padding: 10px 18px;
+  background: var(--pink);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-3deg);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+#root > div::after {
+  content: "\2726";
+  position: absolute;
+  top: -39px;
+  right: 22px;
+  color: var(--ink);
+  font-size: 68px;
+  line-height: 1;
+  text-shadow: 3px 3px 0 #fffdf8;
+  pointer-events: none;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 0 #f9a8cd;
+}
+
+#root > div > p {
+  width: fit-content;
+  margin: 0 0 28px;
+  padding: 8px 14px;
+  color: #47394f;
+  background: #f4edf8;
+  border-left: 4px solid var(--ink);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+button, input { font: inherit; }
+
+button {
+  padding: 11px 16px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+button:hover:not(:disabled) {
+  background: #ffe4f0;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+button:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+button:focus-visible, input:focus-visible {
+  outline: 3px solid #7733aa;
+  outline-offset: 5px;
+}
+
+form {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  box-shadow: inset 3px 3px 0 #f1e5ed;
+}
+
+input::placeholder { color: #6f5b70; opacity: 1; }
+input:focus { background: #fff7fb; }
+form > button { padding-inline: 25px; background: var(--pink); }
+
+/* Filter tabs are separate from the add form. */
+#root > div > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 26px;
+  padding-bottom: 24px;
+  border-bottom: 2px dashed #bfa4b8;
+}
+
+button:disabled {
+  color: var(--paper);
+  background: var(--ink);
+  box-shadow: 3px 3px 0 #c981a8;
+  cursor: default;
+  opacity: 1;
+}
+
+ul {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-left-width: 7px;
+  box-shadow: 4px 4px 0 #ead5e3;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+li:nth-child(even) { border-left-color: #74458c; }
+li > button { flex-shrink: 0; padding: 8px 10px; font-size: 12px; }
+li > button:first-of-type { margin-left: auto; background: #e9e0ff; }
+li > button:last-of-type { color: #852447; background: #ffe2eb; }
+
+#root > div > div + p {
+  width: 100%;
+  margin: 0;
+  padding: 42px 18px;
+  color: #58405b;
+  background:
+    radial-gradient(circle, #c187aa30 1px, transparent 1.5px) 0 0 / 6px 6px,
+    #fff0f7;
+  border: 2px dashed #875774;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body { padding: 64px 16px 32px; }
+  #root > div { padding: 44px 18px 24px; box-shadow: 6px 6px 0 var(--ink); }
+  #root > div::before { left: 12px; font-size: 10px; letter-spacing: 1px; }
+  #root > div::after { right: 8px; top: -29px; font-size: 48px; }
+  form { flex-direction: column; }
+  #root > div > div { gap: 10px; }
+  #root > div > div > button { flex: 1; padding: 10px 8px; font-size: 12px; }
+  li { padding: 14px; gap: 10px; }
+  li > button:first-of-type { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none; }
+}

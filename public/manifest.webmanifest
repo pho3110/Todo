@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "TodoApp — Quản lý công việc",
+  "short_name": "TodoApp",
+  "lang": "vi",
+  "description": "Quản lý công việc cá nhân, hỗ trợ sử dụng offline.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8dce9",
+  "theme_color": "#fff0f6",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
